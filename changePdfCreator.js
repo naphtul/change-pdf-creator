@@ -18,7 +18,7 @@ var walk = function(dir, done) {
             if (!--pending) done(null, results);
           });
         } else {
-          results.push(file);
+          if (file.toLowerCase().endsWith('.pdf')) results.push(file);
           if (!--pending) done(null, results);
         }
       });
